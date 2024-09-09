@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.author {
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+}
+.message {
+  border: 2px solid #000;
+  margin: 8px 0;
+  padding: 4px;
+  max-width: min(600px, 90%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.message .text {
+  word-break: break-word;
+}
+.added {
+  display: inline-block;
+  width: 100%;
+  text-align: end;
+}
+button {
+  padding: 8px;
+}
+.new-message button {
+  background-color: black;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
