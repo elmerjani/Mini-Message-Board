@@ -5,14 +5,23 @@ const messages = [
   {
     text: 'Hi there!',
     user: 'Amando',
-    added: new Date(),
+    added: formateDate(new Date()),
   },
   {
     text: 'Hello World!',
     user: 'Charles',
-    added: new Date(),
+    added: formateDate(new Date()),
   },
 ];
+function formateDate(date) {
+  const arr = date.toString().split(' ');
+  let newDate = '';
+  for (let i = 0; i < 5; i++) {
+    newDate += arr[i] + ' ';
+  }
+  return newDate;
+}
+
 app.use(express.urlencoded({ extended: true }));
 const assetsPath = path.join(__dirname, 'public');
 app.use(express.static(assetsPath));
@@ -31,7 +40,7 @@ app.post('/new', (req, res) => {
   messages.push({
     text: req.body.messageText,
     user: req.body.author,
-    added: new Date(),
+    added: formateDate(new Date()),
   });
   res.redirect('/');
 });
